@@ -1,0 +1,35 @@
+# Виртуальное окружение
+venv/
+
+# Конфигурация PyCharm
+.idea/
+*.iml
+
+# Питонские файлы
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Логи и отладочные файлы
+*.log
+*.pot
+
+# Базы данных
+*.sqlite3
+*.db
+
+# Сборка и дистрибуция
+*.egg
+*.egg-info
+dist/
+build/
+*.tar.gz
+*.whl
+
+# Операционные системы
+.DS_Store
+Thumbs.db
+
+# Конфигурация других IDE (VS Code, Eclipse)
+.vscode/
