@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:1.17
+    restart: unless-stopped
+    volumes:
+      - ./data/nginx/letsencrypt:/etc/nginx/conf.d
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    ports:
+      - "80:80"
+    command: "nginx -g 'daemon off;'"
+  certbot:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    restart: unless-stopped
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
